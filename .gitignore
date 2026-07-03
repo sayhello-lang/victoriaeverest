@@ -1,0 +1,23 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# env / secrets — NEVER commit these
+.env
+.env*.local
+.env.local
+
+# builds
+.next/
+out/
+dist/
+build/
+
+# vercel
+.vercel
+
+# misc
+.DS_Store
+*.log
+npm-debug.log*

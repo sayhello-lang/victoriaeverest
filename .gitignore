@@ -21,3 +21,6 @@ build/
 .DS_Store
 *.log
 npm-debug.log*
+
+# raw page export kept locally, served copy lives in public/
+app/Yap/

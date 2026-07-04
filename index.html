@@ -40,7 +40,7 @@ p{margin:0 0 16px}
 .btn-red:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(229,57,53,.7)}
 
 /* neon badge */
-.neon-badge{display:inline-block;padding:12px 30px;border:2px solid #fff3c4;border-radius:16px;color:#fff3c4;font-family:var(--grotesk);letter-spacing:.12em;text-transform:uppercase;font-size:13px;background:rgba(0,0,0,.25);box-shadow:0 0 6px #fff3c4,0 0 14px #fff3c4,0 0 30px #ff1a1a,0 0 60px #ff1a1a;text-shadow:0 0 2px #fff3c4;animation:flicker 5s infinite}
+.neon-badge{display:inline-block;padding:10px 24px;border:2px solid #fff3c4;border-radius:14px;color:#fff3c4;font-family:var(--grotesk);letter-spacing:.12em;text-transform:uppercase;font-size:12px;background:rgba(0,0,0,.25);box-shadow:0 0 5px #fff3c4,0 0 16px rgba(255,26,26,.6);text-shadow:0 0 2px #fff3c4;animation:flicker 6s infinite}
 @keyframes flicker{0%,100%{opacity:1}3%{opacity:.35}3.4%{opacity:1}7%{opacity:.85}43%{opacity:.3}44%{opacity:1}72%{opacity:.6}72.3%{opacity:1}}
 
 /* gradient + neon text */
@@ -49,8 +49,15 @@ p{margin:0 0 16px}
 .neon{color:#fff;text-shadow:0 0 3px #c62828,0 0 6px #ff2003,0 0 13px #ff2003}
 
 /* announcement + tickers */
-.announce{background:var(--red-deep);color:#fff;font-family:var(--mono);text-transform:uppercase;letter-spacing:1px;font-size:13px;font-weight:700;padding:12px 16px;display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap;text-align:center}
+.announce{background:linear-gradient(90deg,#a01e1e,#c62828 50%,#a01e1e);color:#fff;padding:18px 20px;border-bottom:1px solid rgba(255,255,255,.15)}
+.announce-inner{max-width:1170px;margin:0 auto;display:flex;gap:14px 30px;justify-content:center;align-items:center;flex-wrap:wrap}
+.announce-title{font-family:var(--mono);text-transform:uppercase;letter-spacing:2px;font-size:15px;font-weight:700}
 .announce .y{color:var(--yellow)}
+.cd-top{margin:0;gap:10px}
+.cd-top .u{background:rgba(0,0,0,.35);border-color:rgba(255,255,255,.3);min-width:58px;padding:8px 10px;box-shadow:none}
+.cd-top .n{font-size:28px}
+.cd-top .l{color:rgba(255,255,255,.75)}
+@media(max-width:600px){.announce-title{font-size:13px}.cd-top .n{font-size:22px}.cd-top .u{min-width:48px;padding:6px 8px}}
 .ticker{overflow:hidden;white-space:nowrap;border-top:2px solid var(--red-deep);border-bottom:2px solid var(--red-deep);background:#050505;padding:14px 0;-webkit-mask-image:linear-gradient(to left,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(to left,transparent,#000 12%,#000 88%,transparent)}
 .ticker__t{display:inline-block;font-family:var(--headline);font-size:30px;letter-spacing:2px;color:#fff;animation:scroll 24s linear infinite}
 .ticker__t span{margin:0 26px}.ticker__t .d{color:var(--red-bright)}
@@ -68,13 +75,20 @@ p{margin:0 0 16px}
 /* image placeholder */
 .ph{position:relative;background:linear-gradient(135deg,#1a0a05,#0f0f0f);border:1px dashed #4a2418;border-radius:14px;display:flex;align-items:center;justify-content:center;min-height:320px;color:#7a5a4a;font-family:var(--mono);font-size:12px;letter-spacing:1px;text-align:center;padding:20px}
 .ph small{display:block;color:#5a4038;margin-top:6px;font-size:11px}
+.frame{width:100%;border-radius:14px;border:1px solid #241010;background:#0f0f0f;object-fit:contain;display:block}
+.frame.cover{object-fit:cover}
+.temp-note{font-family:var(--mono);font-size:11px;color:#7a5a4a;letter-spacing:1px;margin-top:8px}
 
 /* hero */
-.hero{background:radial-gradient(circle at 78% 40%,#3a1a0a 0%,#1a0a05 48%,#0a0a0a 100%)}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
-.hero h1{font-size:clamp(64px,11vw,132px);color:#fff}
+.hero{background:radial-gradient(circle at 78% 40%,#3a1a0a 0%,#1a0a05 48%,#0a0a0a 100%);padding:64px 0 72px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.hero-head{position:relative;display:inline-block;margin:6px 0 2px}
+.hero h1{font-size:clamp(58px,8.4vw,110px);color:#fff;line-height:.86}
 .hero h1 .red{color:var(--red-deep)}
-.script{font-family:var(--grotesk);color:var(--red);font-style:italic;font-weight:700;font-size:clamp(24px,4vw,40px);transform:rotate(-6deg);display:inline-block}
+.script{font-family:var(--grotesk);color:var(--red);font-style:italic;font-weight:700;font-size:clamp(22px,3vw,34px);transform:rotate(-6deg);position:absolute;right:-6px;bottom:-14px;white-space:nowrap;text-shadow:0 3px 12px rgba(0,0,0,.6)}
+.hero-lead{margin-bottom:12px}
+.hero-media{position:relative;border-radius:18px;padding:10px;background:linear-gradient(160deg,rgba(198,40,40,.35),rgba(15,15,15,.6));box-shadow:0 0 0 1px rgba(198,40,40,.5),0 20px 60px rgba(0,0,0,.6),0 0 40px rgba(198,40,40,.2)}
+.hero-media img{border-radius:12px}
 .audience{font-family:var(--mono);font-size:12.5px;letter-spacing:.5px;color:var(--gray);border-top:1px solid #241010;margin-top:28px;padding-top:18px}
 
 /* countdown */
@@ -177,6 +191,7 @@ footer a{color:#bbb}
 .divider-glow::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--red-deep) 50%,transparent);box-shadow:0 0 10px rgba(255,32,3,.5)}
 
 @media(max-width:860px){
+  .script{position:static;display:inline-block;right:auto;bottom:auto;margin-top:6px}
   .hero-grid,.price-grid,.about-grid,.foryou{grid-template-columns:1fr}
   .mods,.bonuses,.walk{grid-template-columns:1fr}
   .stats{grid-template-columns:repeat(2,1fr)}
@@ -190,8 +205,15 @@ footer a{color:#bbb}
 
 <!-- announcement bar with countdown -->
 <div class="announce">
-  <span>A 40-DAY MONEY MINDSET CHALLENGE BY VICTORIA EVEREST</span>
-  <span class="y" id="announce-cd">STARTING IN: — : — : — : —</span>
+  <div class="announce-inner">
+    <div class="announce-title">A 40-Day Money Mindset Challenge by Victoria Everest <span class="y">— starting in:</span></div>
+    <div class="cd cd-top" id="countdown">
+      <div class="u"><div class="n" data-cd="d">00</div><div class="l">Days</div></div>
+      <div class="u"><div class="n" data-cd="h">00</div><div class="l">Hours</div></div>
+      <div class="u"><div class="n" data-cd="m">00</div><div class="l">Mins</div></div>
+      <div class="u"><div class="n" data-cd="s">00</div><div class="l">Secs</div></div>
+    </div>
+  </div>
 </div>
 
 <!-- SECTION 01 — HERO -->
@@ -199,17 +221,12 @@ footer a{color:#bbb}
   <div class="wrap hero-grid">
     <div>
       <div class="eyebrow">READY TO START MAKING MONEY ONLINE</div>
-      <div class="eyebrow mt" style="margin-top:8px">A 40-DAY MONEY MINDSET CHALLENGE BY VICTORIA EVEREST · STARTING IN:</div>
-      <div class="cd" id="countdown">
-        <div class="u"><div class="n" data-cd="d">00</div><div class="l">Days</div></div>
-        <div class="u"><div class="n" data-cd="h">00</div><div class="l">Hours</div></div>
-        <div class="u"><div class="n" data-cd="m">00</div><div class="l">Mins</div></div>
-        <div class="u"><div class="n" data-cd="s">00</div><div class="l">Secs</div></div>
+      <div style="margin:20px 0 12px"><span class="neon-badge">A 6-Week Posting Challenge</span></div>
+      <div class="hero-head">
+        <h1>money mindset<span class="red">.</span></h1>
+        <span class="script">Round One!</span>
       </div>
-      <div style="margin:22px 0 10px"><span class="neon-badge">A 6-Week Posting Challenge</span></div>
-      <h1>money mindset<span class="red">.</span></h1>
-      <div class="script">Round One!</div>
-      <p class="lead mt">Come in, family. I’m going to teach you how to turn your mouth, your message and your mobile phone into money.</p>
+      <p class="lead hero-lead" style="margin-top:26px">Come in, family. I’m going to teach you how to turn your mouth, your message and your mobile phone into money.</p>
       <p class="lead"><strong>40 posts on your account.</strong> A repeatable content system that keeps you posting consistently. And the communication skills to hold attention online — <span class="neon">in 42 days.</span></p>
       <p class="lead">In the last 30 days alone, I generated <strong>61,000 new followers</strong> and <strong>38 million organic reach</strong>. No paid ads. No agency. No viral dance strategy. Just content, confidence, consistency, receipts and a message people could feel. Now I’m going to show you exactly what I did — and dare you to do it too.</p>
       <a href="#pricing" class="btn btn-primary mt">Lock Me In →</a>
@@ -217,7 +234,9 @@ footer a{color:#bbb}
       <div class="audience">For creators, coaches, business owners, online stores, service providers, retreat hosts, wellness brands, beauty brands, food brands, experts, educators — and every woman who knows she has something to say but has been playing too small online.</div>
     </div>
     <div>
-      <div class="ph" style="min-height:520px">VICTORIA — HERO PHOTO<small>Drop in Victoria's hero image (portrait, ~4:5)</small></div>
+      <div class="hero-media">
+        <img class="frame cover" style="max-height:480px;height:480px;width:100%" src="/img/6a0a136bc56db4013f8c97f9.jpeg" alt="On camera — temporary placeholder" />
+      </div>
     </div>
   </div>
 </section>
@@ -481,12 +500,12 @@ footer a{color:#bbb}
     <div class="eyebrow"><span class="slash">//</span> receipts from the family</div>
     <h2 class="title mt">they jumped in. look what happened.</h2>
     <div class="mods mt" style="margin-top:32px">
-      <div class="ph" style="min-height:220px">TESTIMONIAL 1<small>Handle · before → after · “the moment it clicked” screenshot</small></div>
-      <div class="ph" style="min-height:220px">TESTIMONIAL 2<small>Victoria's own student wins / DM receipts</small></div>
-      <div class="ph" style="min-height:220px">TESTIMONIAL 3<small>Community screenshots from The Village / GBTM</small></div>
-      <div class="ph" style="min-height:220px">TESTIMONIAL 4<small>Keep card format · real handle · real quote</small></div>
+      <img class="frame" style="max-height:340px" src="/img/tmplo_gvy42.jpg" alt="Testimonial — temporary" />
+      <img class="frame" style="max-height:340px" src="/img/tmp5337s7qf.jpg" alt="Testimonial — temporary" />
+      <img class="frame" style="max-height:340px" src="/img/tmpwajymy3p.jpg" alt="Testimonial — temporary" />
+      <img class="frame" style="max-height:340px" src="/img/tmpandub34a.jpg" alt="Testimonial — temporary" />
     </div>
-    <p class="mono-line mt" style="font-size:12px;color:#5a4038">Developer note: borrowed testimonials removed — insert Victoria's own before launch.</p>
+    <p class="temp-note">⚠ Temporary filler from the reference site — several name the other creator. Replace with Victoria's own before launch.</p>
   </div>
 </section>
 
@@ -577,7 +596,7 @@ footer a{color:#bbb}
 <!-- SECTION 13 — ABOUT VICTORIA -->
 <section class="section">
   <div class="wrap about-grid">
-    <div class="ph" style="min-height:480px">VICTORIA — ABOUT PHOTO<small>Portrait / lifestyle image</small></div>
+    <img class="frame cover" style="max-height:520px;height:520px" src="/img/6a0a148819e1ac5f5289c159.jpg" alt="Growth — temporary placeholder" />
     <div>
       <div class="eyebrow"><span class="slash">//</span> the person teaching you this</div>
       <h2 class="title mt">Hello, family. I’m Victoria.</h2>
@@ -609,10 +628,11 @@ footer a{color:#bbb}
     <div class="eyebrow"><span class="slash">//</span> receipts you can see</div>
     <h2 class="title mt">proof, in screenshots.</h2>
     <div class="walk mt" style="margin-top:32px">
-      <div class="ph" style="min-height:260px">30-DAY REACH<small>Victoria's analytics screenshot</small></div>
-      <div class="ph" style="min-height:260px">FOLLOWER GROWTH<small>Growth curve screenshot</small></div>
-      <div class="ph" style="min-height:260px">8.4M POST<small>Single-post insights screenshot</small></div>
+      <img class="frame" style="max-height:420px" src="/img/6a0a136b8d08689eb2941f11.jpeg" alt="Insights — temporary" />
+      <img class="frame" style="max-height:420px" src="/img/6a0a136b8d08689eb2941f0f.jpeg" alt="Insights — temporary" />
+      <img class="frame" style="max-height:420px" src="/img/6a35936361dae399a9781034.jpg" alt="Insights — temporary" />
     </div>
+    <p class="temp-note">⚠ Temporary filler screenshots — replace with Victoria's own analytics before launch.</p>
     <p class="lead mt">No team. Me, my iPhone, and a mini-mic. Don’t count yourself out.</p>
     <div class="center"><a href="#pricing" class="btn btn-primary">I’m In. Let’s Go. →</a></div>
   </div>
@@ -724,7 +744,6 @@ footer a{color:#bbb}
 (function(){
   var target = new Date(2026, 6, 30, 23, 59, 0).getTime(); // month is 0-indexed: 6 = July
   var els = { d:document.querySelector('[data-cd=d]'), h:document.querySelector('[data-cd=h]'), m:document.querySelector('[data-cd=m]'), s:document.querySelector('[data-cd=s]') };
-  var announce = document.getElementById('announce-cd');
   function pad(n){ return (n<10?'0':'')+n; }
   function tick(){
     var diff = target - Date.now();
@@ -734,7 +753,6 @@ footer a{color:#bbb}
     var m = Math.floor(diff%3600000/60000);
     var s = Math.floor(diff%60000/1000);
     if(els.d){ els.d.textContent=pad(d); els.h.textContent=pad(h); els.m.textContent=pad(m); els.s.textContent=pad(s); }
-    if(announce){ announce.textContent='STARTING IN: '+pad(d)+'d '+pad(h)+'h '+pad(m)+'m '+pad(s)+'s'; }
   }
   tick(); setInterval(tick, 1000);
 })();

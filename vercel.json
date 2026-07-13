@@ -1,8 +1,5 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "cleanUrls": true,
-  "redirects": [
-    { "source": "/", "destination": "/club", "permanent": false }
-  ]
+  "cleanUrls": true
 }

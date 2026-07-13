@@ -25,3 +25,7 @@ npm-debug.log*
 # raw page export kept locally, served copy lives in public/
 app/Yap/
 
+
+# Victoria's private source assets — NEVER commit/deploy
+public/
+img/

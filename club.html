@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Join the Club — Victoria Everest</title>
+<meta name="description" content="Get on the list for the Money Mindset Challenge — founding-member pricing and early access." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#0a0a0a; --panel:#121212; --smoke:#f5f5f5; --white:#fff;
+  --red:#e53935; --red-deep:#c62828; --red-bright:#ff2003; --yellow:#ffd600; --gray:#9a9a9a;
+  --headline:"Bebas Neue",sans-serif; --content:"Outfit",sans-serif; --mono:"Space Mono",monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{
+  background:var(--bg);color:var(--smoke);font-family:var(--content);
+  -webkit-font-smoothing:antialiased;min-height:100dvh;
+  display:flex;align-items:center;justify-content:center;padding:20px;
+  background-image:radial-gradient(circle at 50% 22%,#3a1a0a 0%,#1a0a05 45%,#0a0a0a 100%);
+}
+.card{
+  width:100%;max-width:460px;position:relative;overflow:hidden;
+  background:linear-gradient(180deg,#141414,#0d0d0d);
+  border:1px solid #241010;border-radius:28px;padding:44px 30px 34px;
+  box-shadow:0 0 0 1px rgba(198,40,40,.25),0 30px 80px rgba(0,0,0,.7),0 0 60px rgba(198,40,40,.18);
+  text-align:center;
+}
+.orb{position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:340px;height:240px;
+  background:radial-gradient(ellipse at center,rgba(229,57,53,.4),transparent 70%);filter:blur(20px);pointer-events:none}
+.brandline{position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--red-bright),var(--yellow),var(--red-deep))}
+.wordmark{position:relative;font-family:var(--headline);font-size:30px;letter-spacing:3px;color:#fff;line-height:1}
+.tagline{position:relative;font-family:var(--mono);font-size:11px;letter-spacing:4px;color:var(--red);text-transform:uppercase;margin-top:8px}
+.headline{position:relative;font-family:var(--headline);font-weight:400;font-size:52px;line-height:.92;color:#fff;margin:26px 0 0}
+.headline .y{color:var(--yellow)}
+.sub{position:relative;color:#cfcfcf;font-size:15.5px;line-height:1.5;margin:16px auto 28px;max-width:34ch}
+.pill{
+  display:block;width:100%;font-family:var(--content);font-weight:700;font-size:17px;letter-spacing:.5px;
+  background:var(--yellow);color:#1a1a1a;border:none;border-radius:999px;padding:18px 24px;cursor:pointer;
+  transition:transform .15s,box-shadow .15s;
+}
+.pill:hover{transform:translateY(-2px);box-shadow:0 10px 34px rgba(255,214,0,.35)}
+.pill:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.fine{position:relative;color:var(--gray);font-size:12.5px;margin:16px 0 0;font-family:var(--mono);letter-spacing:.5px}
+
+/* modal */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(4px);
+  display:none;align-items:flex-end;justify-content:center;padding:0;z-index:50}
+.overlay.show{display:flex}
+.modal{width:100%;max-width:460px;background:linear-gradient(180deg,#161616,#0e0e0e);
+  border:1px solid #2a1212;border-top:3px solid var(--red);border-radius:24px 24px 0 0;
+  padding:28px 24px calc(28px + env(safe-area-inset-bottom));position:relative;
+  box-shadow:0 -20px 60px rgba(0,0,0,.6);animation:slideUp .25s ease}
+@keyframes slideUp{from{transform:translateY(30px);opacity:.4}to{transform:translateY(0);opacity:1}}
+.close{position:absolute;top:14px;right:16px;background:none;border:none;color:var(--gray);font-size:28px;line-height:1;cursor:pointer}
+.modal h2{font-family:var(--headline);font-weight:400;font-size:38px;color:#fff;margin:2px 0 4px}
+.msub{color:var(--gray);font-size:14px;margin:0 0 20px}
+label{display:block;text-align:left;font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--gray);text-transform:uppercase;margin-bottom:14px}
+input{display:block;width:100%;margin-top:6px;background:#0a0a0a;border:1px solid #2a2a2a;border-radius:12px;
+  padding:15px 16px;color:#fff;font-family:var(--content);font-size:16px;outline:none;transition:border-color .15s}
+input:focus{border-color:var(--red)}
+.err{color:#ff6b6b;font-size:13.5px;min-height:18px;margin:6px 0 0;text-align:left}
+@media(min-width:520px){.overlay{align-items:center}.modal{border-radius:24px}}
+
+/* thank-you view */
+.hidden{display:none}
+.ty{text-align:center}
+.ty .check{font-size:46px;margin-bottom:6px}
+.ty h1{font-family:var(--headline);font-weight:400;font-size:54px;color:#fff;margin:6px 0 0;line-height:.95}
+.ty h1 .y{color:var(--yellow)}
+.ty p{color:#cfcfcf;font-size:16px;line-height:1.55;margin:16px auto 0;max-width:32ch}
+.ty .tag{font-family:var(--mono);font-size:12px;letter-spacing:2px;color:var(--red);text-transform:uppercase;margin-top:22px}
+</style>
+</head>
+<body>
+
+<div class="card" id="card">
+  <div class="brandline"></div>
+  <div class="orb"></div>
+
+  <!-- OPT-IN VIEW -->
+  <div id="view-optin">
+    <div class="wordmark">VICTORIA EVEREST</div>
+    <div class="tagline">Post · Pitch · Profit</div>
+    <h1 class="headline">Join the <span class="y">money</span> club.</h1>
+    <p class="sub">Be first in line for the Money Mindset Challenge — founding-member pricing, early access, and the drops before anyone else.</p>
+    <button class="pill" id="openBtn">Join the club</button>
+    <p class="fine">No spam. Unsubscribe anytime.</p>
+  </div>
+
+  <!-- THANK-YOU VIEW -->
+  <div id="view-ty" class="ty hidden">
+    <div class="check">🎉</div>
+    <h1>You’re <span class="y">in.</span></h1>
+    <p>Watch your inbox — Victoria will send everything you need for Round One. Talk soon, family.</p>
+    <div class="tag">#VEMONEYMINDSET</div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <button class="close" id="closeBtn" aria-label="Close">×</button>
+    <h2>Join the club</h2>
+    <p class="msub">Drop your details and you’re on the list.</p>
+    <form id="form" novalidate>
+      <label>First name
+        <input name="name" type="text" autocomplete="given-name" required />
+      </label>
+      <label>Email
+        <input name="email" type="email" autocomplete="email" inputmode="email" required />
+      </label>
+      <label>Phone
+        <input name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+44…" required />
+      </label>
+      <button class="pill" type="submit" id="submitBtn">Confirm →</button>
+      <p class="err" id="err"></p>
+    </form>
+  </div>
+</div>
+
+<script>
+(function(){
+  var overlay=document.getElementById('overlay');
+  var openBtn=document.getElementById('openBtn');
+  var closeBtn=document.getElementById('closeBtn');
+  var form=document.getElementById('form');
+  var err=document.getElementById('err');
+  var submitBtn=document.getElementById('submitBtn');
+
+  function open(){ overlay.classList.add('show'); setTimeout(function(){ form.name.focus(); },100); }
+  function close(){ overlay.classList.remove('show'); err.textContent=''; }
+  openBtn.addEventListener('click',open);
+  closeBtn.addEventListener('click',close);
+  overlay.addEventListener('click',function(e){ if(e.target===overlay) close(); });
+
+  form.addEventListener('submit',async function(e){
+    e.preventDefault();
+    err.textContent='';
+    var name=form.name.value.trim();
+    var email=form.email.value.trim();
+    var phone=form.phone.value.trim();
+    if(!name){ err.textContent='Please enter your first name.'; return; }
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ err.textContent='Please enter a valid email.'; return; }
+    if(!phone){ err.textContent='Please enter your phone number.'; return; }
+
+    submitBtn.disabled=true; submitBtn.textContent='Joining…';
+    try{
+      var r=await fetch('/api/subscribe',{
+        method:'POST',
+        headers:{'content-type':'application/json'},
+        body:JSON.stringify({name:name,email:email,phone:phone})
+      });
+      var data={};
+      try{ data=await r.json(); }catch(_){}
+      if(r.ok && data.ok){
+        close();
+        document.getElementById('view-optin').classList.add('hidden');
+        document.getElementById('view-ty').classList.remove('hidden');
+        window.scrollTo(0,0);
+      } else {
+        err.textContent=(data && data.error) || 'Something went wrong. Please try again.';
+        submitBtn.disabled=false; submitBtn.textContent='Confirm →';
+      }
+    }catch(_){
+      err.textContent='Network error. Please try again.';
+      submitBtn.disabled=false; submitBtn.textContent='Confirm →';
+    }
+  });
+})();
+</script>
+</body>
+</html>

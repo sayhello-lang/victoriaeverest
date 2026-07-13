@@ -97,13 +97,25 @@ p{margin:0 0 14px}
 .about .lead{max-width:100%}
 
 /* pricing */
-.pricing .card{background:linear-gradient(180deg,#121212,#0c0c0c);border:1px solid var(--coral);border-radius:16px;padding:30px;max-width:520px;margin:0 auto;text-align:center;box-shadow:0 0 40px rgba(232,80,58,.12)}
-.pricing .price{font-family:var(--anton);font-size:72px;color:#fff;line-height:.9}
-.pricing .split{color:var(--grey);margin:8px 0 2px}
-.pricing .notopen{background:#241010;border:1px solid var(--red);color:#ffb3ab;font-size:12px;letter-spacing:1px;text-transform:uppercase;padding:10px 14px;border-radius:8px;margin:16px 0}
-.pricing ul{list-style:none;padding:0;margin:18px 0;text-align:left}
-.pricing li{padding:7px 0 7px 28px;position:relative;color:#e2e2e2;font-size:14.5px}
-.pricing li::before{content:"✓";position:absolute;left:0;color:var(--coral);font-weight:700}
+.stackgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:start;margin-top:14px}
+.stack{background:#111;border:1px solid #241010;border-radius:14px;padding:24px}
+.stacktable{width:100%;border-collapse:collapse;font-size:14.5px}
+.stacktable td{padding:10px 6px;border-bottom:1px solid #1c1c1c;color:#cfcfcf}
+.stacktable td.v{text-align:right;font-weight:700;color:#fff;white-space:nowrap}
+.stacktable tr.head td{font-size:11px;letter-spacing:2px;color:var(--coral);text-transform:uppercase;border-bottom:1px solid var(--coral)}
+.stacktable tr.total td{font-family:var(--anton);font-size:22px;color:#fff;border-top:2px solid var(--coral);border-bottom:none;padding-top:14px}
+.cards{display:grid;gap:16px}
+.pcard{background:linear-gradient(180deg,#141414,#0c0c0c);border:1px solid #2a2a2a;border-radius:16px;padding:26px;text-align:center;position:relative}
+.pcard.best{border-color:var(--coral);box-shadow:0 0 40px rgba(232,80,58,.14)}
+.pcard .badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--coral);color:#0a0a0a;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:999px}
+.pcard .pc-label{font-size:12px;letter-spacing:2px;color:var(--grey);text-transform:uppercase;margin-bottom:4px}
+.pcard .price{font-family:var(--anton);font-size:58px;color:#fff;line-height:.9;margin-bottom:8px}
+.mini{list-style:none;padding:0;margin:10px 0 18px;text-align:left;display:inline-block}
+.mini li{padding:5px 0 5px 24px;position:relative;color:#dcdcdc;font-size:14px}
+.mini li::before{content:"✓";position:absolute;left:0;color:var(--coral);font-weight:700}
+.pcard .cta{width:100%;justify-content:center}
+.guarantee{background:#111;border:1px solid #241010;border-left:3px solid var(--coral);border-radius:10px;padding:18px 20px;margin:28px 0 18px;font-size:14.5px;color:#dcdcdc;line-height:1.6}
+.guarantee b{color:#fff}
 
 /* faq */
 .faq details{border-bottom:1px solid #1a1a1a}
@@ -151,7 +163,7 @@ footer a{color:#9a9a9a}
 <body>
 
 <div class="announce">
-  <span>THE PAID CHALLENGE — <b>DOORS OPEN 1 AUGUST 2026</b></span>
+  <span>THE PAID CHALLENGE IS OPEN — <b>DOORS CLOSE 31 AUGUST</b></span>
   <span class="count" id="cd-top">00:00:00:00</span>
 </div>
 
@@ -164,8 +176,8 @@ footer a{color:#9a9a9a}
     <h1>You don’t need another course.<br><span class="coral">You need an environment.</span></h1>
     <p class="support">You do not need another course sitting unfinished in your laptop. You need an environment that forces you to move — with Victoria Everest.</p>
     <div class="row">
-      <button class="cta" data-open>Join the Waitlist →</button>
-      <span class="under">Doors open <b style="color:#fff">1 Aug</b> · <span class="count" id="cd-hero">00:00:00:00</span></span>
+      <a class="cta" href="#pricing">Get In — Enrol Now →</a>
+      <span class="under">Doors close <b style="color:#fff">31 Aug</b> · <span class="count" id="cd-hero">00:00:00:00</span></span>
     </div>
   </div>
 </section>
@@ -269,26 +281,59 @@ footer a{color:#9a9a9a}
   </div>
 </section>
 
-<!-- PRICING (waitlist mode) -->
+<!-- PRICING (open cart) -->
 <section style="background:#0c0c0c" id="pricing">
   <div class="wrap">
-    <div class="kicker" style="justify-content:center;display:flex"><span class="rule"></span><span class="label">Founding pricing</span></div>
-    <h2 style="text-align:center">Join the <span class="coral">waitlist.</span></h2>
-    <div class="card">
-      <div class="price">$297</div>
-      <div class="split">or 2 × $167</div>
-      <div class="notopen">● Checkout isn’t open yet — doors open 1 August. The waitlist gets in 24 hours early + founding bonuses.</div>
-      <ul>
-        <li>6-week Get Seen · Get Chosen · Get Paid challenge</li>
-        <li>Day One live masterclass (1 Sept) + weekly lives</li>
-        <li>40 daily drops + dares</li>
-        <li>Private implementation community</li>
-        <li>Lifetime access to everything</li>
-        <li>Founding-member bonuses (first cohort only)</li>
-      </ul>
-      <button class="cta" data-open>Join the Waitlist →</button>
-      <p class="mono-sm" style="margin-top:16px">No income or follower guarantee. Results depend on your offer, market, execution and consistency.</p>
+    <div class="kicker" style="justify-content:center;display:flex"><span class="rule"></span><span class="label">The offer</span></div>
+    <h2 style="text-align:center">Everything you <span class="coral">get.</span></h2>
+
+    <div class="stackgrid">
+      <!-- value stack -->
+      <div class="stack">
+        <table class="stacktable">
+          <tr class="head"><td>The core challenge</td><td class="v">Value</td></tr>
+          <tr><td>6-week Get Seen · Get Chosen · Get Paid challenge</td><td class="v">$997</td></tr>
+          <tr><td>Day One live masterclass (1 Sept) + weekly lives</td><td class="v">$497</td></tr>
+          <tr><td>40 daily drops + dares</td><td class="v">$997</td></tr>
+          <tr><td>Private implementation community</td><td class="v">$297</td></tr>
+          <tr class="head"><td>Founding bonuses</td><td class="v">Value</td></tr>
+          <tr><td>Content &amp; filming setup kit</td><td class="v">$97</td></tr>
+          <tr><td>Conversion templates + scripts</td><td class="v">$197</td></tr>
+          <tr><td>Lifetime access to everything</td><td class="v">$497</td></tr>
+          <tr class="total"><td>Total value</td><td class="v">$3,876</td></tr>
+        </table>
+        <p class="mono-sm" style="margin-top:12px">* Indicative component values — final stack to be confirmed with Victoria.</p>
+      </div>
+
+      <!-- price cards -->
+      <div class="cards">
+        <div class="pcard best">
+          <div class="badge">Best deal</div>
+          <div class="pc-label">Pay in full</div>
+          <div class="price">$297</div>
+          <ul class="mini">
+            <li>Everything above</li>
+            <li>All founding bonuses</li>
+            <li>Lifetime access</li>
+          </ul>
+          <a class="cta" href="/order?plan=full">Enrol Now →</a>
+        </div>
+        <div class="pcard">
+          <div class="pc-label">Split pay</div>
+          <div class="price">2 × $167</div>
+          <ul class="mini">
+            <li>Same full access</li>
+            <li>Two monthly payments</li>
+          </ul>
+          <a class="cta ghost" href="/order?plan=split">Split It →</a>
+        </div>
+      </div>
     </div>
+
+    <div class="guarantee">
+      <b>The finish-it guarantee.</b> Do all 40 days, genuinely do the work, and if you don’t feel you got the value — email us and we’ll make it right. <span class="mono-sm">Full refund terms confirmed at checkout. No income or follower guarantee.</span>
+    </div>
+    <p style="text-align:center" class="mono-sm">🔒 Secure checkout · Doors close 31 August 23:59 UK · <span class="count">00:00:00:00</span></p>
   </div>
 </section>
 
@@ -314,14 +359,14 @@ footer a{color:#9a9a9a}
   <div class="wrap">
     <h2>Stop hiding.<br><span class="coral">Start getting paid.</span></h2>
     <p class="lead" style="margin:0 auto 24px">The first cohort gets in first. Doors open 1 August — join the list and you’re front of the queue.</p>
-    <button class="cta" data-open>Join the Waitlist →</button>
-    <div class="under" style="margin-top:16px;color:var(--grey)">Doors open 1 Aug · <span class="count" id="cd-final">00:00:00:00</span></div>
+    <a class="cta" href="#pricing">Get In — Enrol Now →</a>
+    <div class="under" style="margin-top:16px;color:var(--grey)">Doors close 31 Aug · <span class="count" id="cd-final">00:00:00:00</span></div>
   </div>
 </section>
 
 <footer>© 2026 Victoria Everest · The Paid Challenge · <a href="#">Terms</a> · <a href="#">Privacy</a> · #ThePaidChallenge</footer>
 
-<a class="sticky" data-open id="sticky">Join the Waitlist · Doors open 1 Aug →</a>
+<a class="sticky" href="#pricing" id="sticky">Enrol Now · Doors close 31 Aug →</a>
 
 <!-- MODAL -->
 <div class="overlay" id="overlay">
@@ -344,7 +389,7 @@ footer a{color:#9a9a9a}
 
 <script>
 (function(){
-  var target=new Date('2026-08-01T00:00:00+01:00').getTime();
+  var target=new Date('2026-08-31T23:59:59+01:00').getTime();
   var els=[].slice.call(document.querySelectorAll('.count'));
   function pad(n){return(n<10?'0':'')+n}
   function tick(){var d=target-Date.now();if(d<0)d=0;

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Enrol — The Paid Challenge</title>
+<title>Enrol — Paid Challenge</title>
 <meta name="robots" content="noindex" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -44,10 +44,10 @@ ul.inc li::before{content:"✓";position:absolute;left:0;color:var(--coral);font
   <div class="card">
     <!-- CHECKOUT VIEW -->
     <div id="view-order">
-      <div class="wordmark">thepaidchallenge<span class="dot">.</span></div>
+      <div class="wordmark">paidchallenge<span class="dot">.</span></div>
       <a class="back" href="/paid">← Back</a>
       <h1>Enrol.</h1>
-      <div class="mono-sm" style="color:var(--grey);font-size:12px;letter-spacing:2px;text-transform:uppercase">The Paid Challenge · Round One</div>
+      <div class="mono-sm" style="color:var(--grey);font-size:12px;letter-spacing:2px;text-transform:uppercase">Paid Challenge · Round One</div>
 
       <div class="plans">
         <div class="plan" data-plan="full"><span>Pay in full</span><b>$297</b></div>
@@ -55,7 +55,7 @@ ul.inc li::before{content:"✓";position:absolute;left:0;color:var(--coral);font
       </div>
 
       <div class="summary">
-        <div class="row"><span id="sum-label">The Paid Challenge — Pay in full</span><span class="amt" id="sum-amt">$297</span></div>
+        <div class="row"><span id="sum-label">Paid Challenge — Pay in full</span><span class="amt" id="sum-amt">$297</span></div>
         <div class="row total"><span>Due today</span><span class="amt" id="sum-total">$297</span></div>
       </div>
 
@@ -75,9 +75,9 @@ ul.inc li::before{content:"✓";position:absolute;left:0;color:var(--coral);font
 
     <!-- SUCCESS VIEW -->
     <div id="view-ok" class="ok hide">
-      <div class="wordmark" style="text-align:center">thepaidchallenge<span class="dot">.</span></div>
+      <div class="wordmark" style="text-align:center">paidchallenge<span class="dot">.</span></div>
       <h1>You’re <span style="color:var(--coral)">in.</span></h1>
-      <p>Payment received — welcome to The Paid Challenge. Check your inbox for access and your Day One details. Now let’s get paid.</p>
+      <p>Payment received — welcome to Paid Challenge. Check your inbox for access and your Day One details. Now let’s get paid.</p>
     </div>
   </div>
 
@@ -90,8 +90,8 @@ ul.inc li::before{content:"✓";position:absolute;left:0;color:var(--coral);font
     return;
   }
   var plan = params.get('plan')==='split' ? 'split' : 'full';
-  var labels={full:{label:'The Paid Challenge — Pay in full',amt:'$297',total:'$297'},
-              split:{label:'The Paid Challenge — Split pay',amt:'2 × $167',total:'$167'}};
+  var labels={full:{label:'Paid Challenge — Pay in full',amt:'$297',total:'$297'},
+              split:{label:'Paid Challenge — Split pay',amt:'2 × $167',total:'$167'}};
   var planEls=[].slice.call(document.querySelectorAll('.plan'));
   function render(){
     planEls.forEach(function(el){el.classList.toggle('active',el.dataset.plan===plan)});
